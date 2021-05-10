@@ -1,0 +1,15 @@
+{
+  "name": "custom-bootstrap-5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass:watch": "sass --watch scss/custom-bootstrap.scss:custom-bootstrap.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.0.0"
+  }
+}

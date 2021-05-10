@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="google" value="notranslate">
+  <link href="custom-bootstrap.css" rel="stylesheet">
+  <style>
+  @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+  @import url('https://fonts.googleapis.com/css?family=Montserrat:900&display=swap');
+
+  html {
+    /* Safari needs this to prevent horizontal scrolling. */
+    max-width: 100%;
+    overflow-x:hidden;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    color: #333;
+    background-color: #FFF;
+    overflow-x:hidden; /* Safari needs this to prevent horizontal scrolling. */
+  }
+
+  .transition-none * {
+    transition: none !important;
+  }
+
+  main {
+    /* min-height: 100vh; /* Don't do this.
+    Instead set display:flex; flex-direction:column; on body, then flex:1 here. */
+    flex: 1;
+  }
+
+  p {
+    margin-bottom: 25px;
+    line-height: 1.75;
+  }
+
+  figure {
+    display:block;
+    margin: 0;
+    padding: 0;
+  }
+
+  pre {
+    width: 90%;
+    margin: 0 auto 50px auto;
+    font-size: 14px;
+    color: #333;
+    background-color: rgb(255,255,255);
+    border: 2px solid #333;
+    border-radius: 15px;
+    overflow:scroll;
+  }
+
+  .article {
+    min-height: 300px;
+    margin: 0 auto 50px auto;
+    padding: 25px;
+    color: rgb(125,125,125);
+    color: #333;
+    background-color: rgb(245,245,245);
+    border: 2px solid rgb(150,150,150);
+    border-radius: 25px;
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.25);
+  }
+
+  .text-white-3d {
+    margin-bottom: 25px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(150,150,150,0.75);
+    font-size: 40px;
+    font-family: Montserrat;
+    color: #FFF;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-shadow:
+    0 1px 0 hsl(174,5%,86%),
+    0 2px 0 hsl(174,5%, 84%),
+    0 3px 0 hsl(174,5%, 82%),
+    0 4px 0 hsl(174,5%, 80%),
+    0 5px 0 hsl(174,5%, 78%),
+    0 6px 0 hsl(174,5%, 76%),
+    0 7px 0 hsl(174,5%, 74%),
+    0 8px 0 hsl(174,5%, 72%),
+    0 9px 0 rgba(140,140,140,0.5),
+    /* shadows */
+    0px 10px 2px  rgba(16, 16, 16, 0.2),
+    0px 12px 4px  rgba(16, 16, 16, 0.2);
+  }
+
+  @media (max-width: 400px) { .text-white-3d { font-size: 32px; }}
+
+  .child-mb-1 > * { margin-bottom: 0.25rem !important; }
+  .child-mb-2 > * { margin-bottom: 0.5rem !important;  }
+  .child-mb-3 > * { margin-bottom: 1rem !important;    }
+  .child-mb-4 > * { margin-bottom: 1.5rem !important;  }
+  .child-mb-5 > * { margin-bottom: 3rem !important;    }
+
+  .w-90 { width: 90% !important; }
+
+  .flex-1 { flex: 1; }
+
+  #primary-navbar {
+    background: #000000;
+    background: linear-gradient(to left, #434343, #000000);
+    box-shadow: 0px 1px 2px rgba(0,0,0,0.75);
+  }
+
+
+  /* =============================================================================
+                            Horizontal Ruler
+  ============================================================================= */
+  /* Inspired by: https://codepen.io/Bupeldox/pen/poyBaoj */
+
+
+  .horizontal-ruler {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    max-width: 1000px;
+    margin: 50px auto;
+    border-top: 1px solid rgb(150,150,150);;
+  }
+
+  .horizontal-ruler > hr {
+    position: relative;
+    top: -12px;
+    width: 10px;
+    left: 0;
+    background-color: rgb(150,150,150);;
+    transform-origin: 0% 0%;
+    opacity: 1;           /* Overwrite Bootstrap. */
+    /* overflow: visible; /* Overwrite Chrome */
+  }
+
+  .horizontal-ruler hr:nth-child(1) { transform: rotate(90deg); }
+  .horizontal-ruler hr:nth-child(2) { transform: rotate(90deg); }
+  .horizontal-ruler hr:nth-child(3) { transform: rotate(90deg); }
+  .horizontal-ruler hr:nth-child(4) { transform: rotate(90deg); }
+  .horizontal-ruler hr:nth-child(5) {
+    width: 15px;
+    margin-right: -5px;
+    transform: rotate(90deg);
+  }
+
+  .horizontal-ruler hr:nth-child(6) { transform: rotate(90deg); }
+  .horizontal-ruler hr:nth-child(7) { transform: rotate(90deg); }
+  .horizontal-ruler hr:nth-child(8) { transform: rotate(90deg); }
+  .horizontal-ruler hr:nth-child(9) { transform: rotate(90deg); }
+  .horizontal-ruler hr:nth-child(10) {
+    width: 25px;
+    margin-right: -15px;
+    transform: rotate(90deg);
+  }
+
+  .horizontal-ruler hr:nth-child(11) { transform: rotate(90deg); }
+  .horizontal-ruler hr:nth-child(12) { transform: rotate(90deg); }
+  .horizontal-ruler hr:nth-child(13) { transform: rotate(90deg); }
+  .horizontal-ruler hr:nth-child(14) { transform: rotate(90deg); }
+  .horizontal-ruler hr:nth-child(15) {
+    width: 15px;
+    margin-right: -5px;
+    transform: rotate(90deg);
+  }
+
+  .horizontal-ruler hr:nth-child(16) { transform: rotate(90deg); }
+  .horizontal-ruler hr:nth-child(17) { transform: rotate(90deg); }
+  .horizontal-ruler hr:nth-child(18) { transform: rotate(90deg); }
+  .horizontal-ruler hr:nth-child(19) { transform: rotate(90deg); }
+  .horizontal-ruler hr:nth-child(20) {
+    width: 40px;
+    margin-right: -30px;
+    transform: rotate(90deg);
+  }
+
+  .horizontal-ruler hr:nth-child(21) { transform: rotate(90deg); }
+  .horizontal-ruler hr:nth-child(22) { transform: rotate(90deg); }
+  .horizontal-ruler hr:nth-child(23) { transform: rotate(90deg); }
+  .horizontal-ruler hr:nth-child(24) { transform: rotate(90deg); }
+  .horizontal-ruler hr:nth-child(25) {
+    width: 15px;
+    margin-right: -5px;
+    transform: rotate(90deg);
+  }
+
+  .horizontal-ruler hr:nth-child(26) { transform: rotate(90deg); }
+  .horizontal-ruler hr:nth-child(27) { transform: rotate(90deg); }
+  .horizontal-ruler hr:nth-child(28) { transform: rotate(90deg); }
+  .horizontal-ruler hr:nth-child(29) { transform: rotate(90deg); }
+  .horizontal-ruler hr:nth-child(30) {
+    width: 25px;
+    margin-right: -15px;
+    transform: rotate(90deg);
+  }
+
+  .horizontal-ruler hr:nth-child(31) { transform: rotate(90deg); }
+  .horizontal-ruler hr:nth-child(32) { transform: rotate(90deg); }
+  .horizontal-ruler hr:nth-child(33) { transform: rotate(90deg); }
+  .horizontal-ruler hr:nth-child(34) { transform: rotate(90deg); }
+  .horizontal-ruler hr:nth-child(35) {
+    width: 15px;
+    margin-right: -5px;
+    transform: rotate(90deg);
+  }
+
+  .horizontal-ruler hr:nth-child(36) { transform: rotate(90deg); }
+  .horizontal-ruler hr:nth-child(37) { transform: rotate(90deg); }
+  .horizontal-ruler hr:nth-child(38) { transform: rotate(90deg); }
+  .horizontal-ruler hr:nth-child(39) {
+    transform: rotate(90deg);
+  }
+
+  .horizontal-ruler hr:last-child { margin-right: -10px; } /* This assumes that the final line has width: 10px; */
+
+  @media (max-width: 575px) {
+    .horizontal-ruler hr:nth-child(2),
+    .horizontal-ruler hr:nth-child(3),
+    .horizontal-ruler hr:nth-child(4),
+    .horizontal-ruler hr:nth-child(5),
+    .horizontal-ruler hr:nth-child(6),
+    .horizontal-ruler hr:nth-child(34),
+    .horizontal-ruler hr:nth-child(35),
+    .horizontal-ruler hr:nth-child(36),
+    .horizontal-ruler hr:nth-child(37),
+    .horizontal-ruler hr:nth-child(38) {
+      display:none;
+    }
+  }
+
+  @media (max-width: 450px) {
+    .horizontal-ruler hr:nth-child(15),
+    .horizontal-ruler hr:nth-child(16),
+    .horizontal-ruler hr:nth-child(17),
+    .horizontal-ruler hr:nth-child(18),
+    .horizontal-ruler hr:nth-child(19),
+    .horizontal-ruler hr:nth-child(21),
+    .horizontal-ruler hr:nth-child(22),
+    .horizontal-ruler hr:nth-child(23),
+    .horizontal-ruler hr:nth-child(24),
+    .horizontal-ruler hr:nth-child(25) {
+      display:none;
+    }
+
+    .horizontal-ruler hr:nth-child(10){
+      width: 15px;
+      margin-right: -5px;
+      transform: rotate(90deg);
+    }
+
+    .horizontal-ruler hr:nth-child(20){
+      width: 25px;
+      margin-right: -15px;
+      transform: rotate(90deg);
+    }
+
+    .horizontal-ruler hr:nth-child(30){
+      width: 15px;
+      margin-right: -5px;
+      transform: rotate(90deg);
+    }
+  }
+
+  @media (max-width: 400px) {
+    .horizontal-ruler {
+      margin: 50px auto;
+      max-width: 300px;
+    }
+
+    .horizontal-ruler hr:nth-child(7),
+    .horizontal-ruler hr:nth-child(8),
+    .horizontal-ruler hr:nth-child(11),
+    .horizontal-ruler hr:nth-child(12),
+    .horizontal-ruler hr:nth-child(26),
+    .horizontal-ruler hr:nth-child(27),
+    .horizontal-ruler hr:nth-child(30),
+    .horizontal-ruler hr:nth-child(31) {
+      display: none;
+    }
+  }
+
+
+  /* =============================================================================
+                                  Media Queries
+  ============================================================================= */
+
+  /* sm */
+  @media (min-width: 576px) {}
+
+  /* md */
+  @media (min-width: 768px) {}
+
+  /* lg */
+  @media (min-width: 992px) {}
+
+  /* xl */
+  @media (min-width: 1200px) {}
+
+  /* xxl */
+  @media (min-width: 1400px) { main > .container-fluid { max-width: 1400px; } }
+  </style>
+  <title> - </title>
+</head>
+
+
+<body>
+  <header id="primary-header">
+    <nav id="primary-navbar" class="navbar navbar-expand-sm navbar-dark">
+      <div class="container-fluid">
+        <a id="brand" class="navbar-brand" href="#!">Tests</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div id="nav-menu" class="collapse navbar-collapse">
+          <div class="navbar-nav ms-auto">
+            <!-- <a class="nav-link link-light" href="#!">Link 1</a> -->
+          </div>
+        </div><!-- <div id="nav-menu" class="collapse navbar-collapse"> -->
+      </div><!-- <div class="container-fluid"> -->
+    </nav>
+  </header>
+
+
+  <!--  ========================================================================
+                                    main
+  ========================================================================== -->
+
+
+  <main class="py-5">
+    <div class="container-fluid pt-3 px-md-5">
+      
+      <article class='article'>
+        <h2 class='text-white-3d'>General Tests:</h2>
+      
+        <div class="mb-3 text-center">
+          <a href="google.com">I'm a link</a>
+        </div>
+
+        <button class="d-block mx-auto btn btn-link">I'm a button styled to look like a link</button>
+      </article>
+
+
+      <!-- ===========================================================================
+      
+      ============================================================================ -->
+      
+      
+      <article class='article'>
+        <h2 class='text-white-3d'>Borders:</h2>
+      
+    
+        <div class="mx-3 mb-3 py-3 border border-red border-2 rounded-3"></div>
+
+        <div class="mx-3 mb-3 py-3 border border-orange border-2 rounded-3"></div>
+
+        <div class="mx-3 mb-3  py-3 border border-yellow border-2 rounded-3"></div>
+
+        <div class="mx-3 mb-3  py-3 border border-olive border-2 rounded-3"></div>
+
+        <div class="mx-3 mb-3  py-3 border border-green border-2 rounded-3"></div>
+
+        <div class="mx-3 mb-3  py-3 border border-teal border-2 rounded-3"></div>
+
+        <div class="mx-3 mb-3  py-3 border border-light-cyan border-2 rounded-3"></div>
+
+        <div class="mx-3 mb-3  py-3 border border-blue border-2 rounded-3"></div>
+
+        <div class="mx-3 mb-3  py-3 border border-violet border-2 rounded-3"></div>
+
+        <div class="mx-3 mb-3  py-3 border border-pink border-2 rounded-3"></div>
+
+        <div class="mx-3 mb-3  py-3 border border-purple border-2 rounded-3"></div>
+
+        <div class="mx-3 mb-3  py-3 border border-brown border-2 rounded-3"></div>
+
+        <div class="mx-3 mb-3  py-3 border border-gray border-2 rounded-3"></div>
+
+        <div class="mx-3 mb-3  py-3 border border-dark border-2 rounded-3"></div>
+
+
+        <p>Is there a <code>border-light</code>?</p>
+      </article>
+
+
+      <!-- ===========================================================================
+      
+      ============================================================================ -->
+      
+      
+      <article class='article'>
+        <h2 class='text-white-3d'>Rounded:</h2>
+      
+      
+        <div class="mb-5 py-4 bg-red border border-dark border-2 rounded-0"></div>
+
+        <div class="mb-5 py-4 bg-orange border border-dark border-2 rounded-1"></div>
+
+        <div class="mb-5 py-4 bg-yellow border border-dark border-2 rounded-2"></div>
+
+        <div class="mb-5 py-4 bg-green border border-dark border-2 rounded-3"></div>
+
+        <div class="mb-5 py-4 bg-light-cyan border border-dark border-2 rounded-4"></div>
+
+        <div class="mb-5 py-4 bg-blue border border-dark border-2 rounded-5"></div>
+
+        <div class="mb-5 py-4 bg-violet border border-dark border-2 rounded-circle"></div>
+
+        <div class="mb-5 py-4 bg-pink border border-dark border-2 rounded-pill"></div>
+      </article>
+
+
+      <!-- ===========================================================================
+      
+      ============================================================================ -->
+      
+      
+      <article class='article'>
+        <h2 class='text-white-3d'>Text:</h2>
+
+        <p class="text-red">Testing 123...</p>
+
+        <p class="text-orange">Testing 123...</p>
+
+        <p class="text-yellow">Testing 123...</p>
+
+        <p class="text-olive">Testing 123...</p>
+
+        <p class="text-green">Testing 123...</p>
+
+        <p class="text-teal">Testing 123...</p>
+
+        <p class="text-light-cyan">Testing 123...</p>
+
+        <p class="text-blue">Testing 123...</p>
+
+        <p class="text-violet">Testing 123...</p>
+
+        <p class="text-pink">Testing 123...</p>
+
+        <p class="text-purple">Testing 123...</p>
+
+        <p class="text-brown">Testing 123...</p>
+
+        <p class="text-gray">Testing 123...</p>
+
+        <p class="text-dark">Testing 123...</p>
+
+        <p class="bg-dark text-light">Testing 123...</p>
+      </article>
+
+
+      <!-- ===========================================================================
+      
+      ============================================================================ -->
+      
+      
+      <article class='article'>
+        <h2 class='text-white-3d'>Background Color:</h2>
+      
+      
+        <div class="mb-3 p-2 bg-red"></div>
+
+        <div class="mb-3 p-2 bg-orange"></div>
+
+        <div class="mb-3 p-2 bg-yellow"></div>
+
+        <div class="mb-3 p-2 bg-olive"></div>
+
+        <div class="mb-3 p-2 bg-green"></div>
+
+        <div class="mb-3 p-2 bg-teal"></div>
+
+        <div class="mb-3 p-2 bg-light-cyan"></div>
+
+        <div class="mb-3 p-2 bg-blue"></div>
+
+        <div class="mb-3 p-2 bg-violet"></div>
+
+        <div class="mb-3 p-2 bg-pink"></div>
+
+        <div class="mb-3 p-2 bg-purple"></div>
+
+        <div class="mb-3 p-2 bg-brown"></div>
+
+        <div class="mb-3 p-2 bg-gray"></div>
+
+        <div class="mb-3 p-2 bg-dark"></div>
+
+        <div class="p-1 bg-dark">
+          <div class="p-2 bg-light"></div>
+        </div>
+      </article>
+
+
+      <!-- ===========================================================================
+      
+      ============================================================================ -->
+      
+      
+      <article class='article'>
+        <h2 class='text-white-3d'>Alerts:</h2>
+      
+      
+        <div class="w-90 mx-auto mb-5 alert alert-red shadow-sm" role="alert">
+          <h4 class="alert-heading">Well done!</h4>
+          A simple primary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+        </div>
+
+
+        <div class="w-90 mx-auto mb-5 alert alert-orange shadow-sm" role="alert">
+          <h4 class="alert-heading">Well done!</h4>
+          A simple primary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+        </div>
+
+
+        <div class="w-90 mx-auto mb-5 alert alert-yellow shadow-sm" role="alert">
+          <h4 class="alert-heading">Well done!</h4>
+          A simple primary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+        </div>
+
+
+        <div class="w-90 mx-auto mb-5 alert alert-olive shadow-sm" role="alert">
+          <h4 class="alert-heading">Well done!</h4>
+          A simple primary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+        </div>
+
+
+        <div class="w-90 mx-auto mb-5 alert alert-green shadow-sm" role="alert">
+          <h4 class="alert-heading">Well done!</h4>
+          A simple primary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+        </div>
+
+
+        <div class="w-90 mx-auto mb-5 alert alert-teal shadow-sm" role="alert">
+          <h4 class="alert-heading">Well done!</h4>
+          A simple primary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+        </div>
+
+
+        <div class="w-90 mx-auto mb-5 alert alert-light-cyan shadow-sm" role="alert">
+          <h4 class="alert-heading">Well done!</h4>
+          A simple primary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+        </div>
+
+
+        <div class="w-90 mx-auto mb-5 alert alert-blue shadow-sm" role="alert">
+          <h4 class="alert-heading">Well done!</h4>
+          A simple primary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+        </div>
+
+
+        <div class="w-90 mx-auto mb-5 alert alert-violet shadow-sm" role="alert">
+          <h4 class="alert-heading">Well done!</h4>
+          A simple primary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+        </div>
+
+
+        <div class="w-90 mx-auto mb-5 alert alert-pink shadow-sm" role="alert">
+          <h4 class="alert-heading">Well done!</h4>
+          A simple primary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+        </div>
+
+
+        <div class="w-90 mx-auto mb-5 alert alert-purple shadow-sm" role="alert">
+          <h4 class="alert-heading">Well done!</h4>
+          A simple primary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+        </div>
+
+
+        <div class="w-90 mx-auto mb-5 alert alert-brown shadow-sm" role="alert">
+          <h4 class="alert-heading">Well done!</h4>
+          A simple primary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+        </div>
+
+
+        <div class="w-90 mx-auto mb-5 alert alert-gray shadow-sm" role="alert">
+          <h4 class="alert-heading">Well done!</h4>
+          A simple primary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+        </div>
+
+
+        <div class="w-90 mx-auto mb-5 alert alert-dark shadow-sm" role="alert">
+          <h4 class="alert-heading">Well done!</h4>
+          A simple primary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+        </div>
+
+
+        <div class="w-90 mx-auto mb-5 alert alert-light shadow-sm" role="alert">
+          <h4 class="alert-heading">Well done!</h4>
+          A simple primary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+        </div>
+
+
+        <p>Is there an <code>alert-light</code>?</p>        
+      </article>
+
+
+      <!-- ===========================================================================
+      
+      ============================================================================ -->
+      
+      
+      <article class='article'>
+        <h2 class='text-white-3d'>Buttons:</h2>
+
+
+        <div class="mb-5 text-center">
+          <button class="btn btn-sm btn-red">Click Me</button>
+          <button class="btn btn-sm btn-orange">Click Me</button>
+          <button class="btn btn-sm btn-yellow">Click Me</button>
+          <button class="btn btn-sm btn-olive">Click Me</button>
+          <button class="btn btn-sm btn-green">Click Me</button>
+          <button class="btn btn-sm btn-teal">Click Me</button>
+          <button class="btn btn-sm btn-light-cyan">Click Me</button>
+          <button class="btn btn-sm btn-blue">Click Me</button>
+          <button class="btn btn-sm btn-violet">Click Me</button>
+          <button class="btn btn-sm btn-pink">Click Me</button>
+          <button class="btn btn-sm btn-purple">Click Me</button>
+          <button class="btn btn-sm btn-brown">Click Me</button>
+          <button class="btn btn-sm btn-gray">Click Me</button>
+          <button class="btn btn-sm btn-dark">Click Me</button>
+          <button class="btn btn-sm btn-light border border-dark">Click Me</button>
+        </div>
+
+
+        <div class="horizontal-ruler">
+          <hr/><hr/><hr/><hr/><hr/><hr/><hr/><hr/><hr/><hr/><hr/><hr/><hr/>
+          <hr/><hr/><hr/><hr/><hr/><hr/><hr/><hr/><hr/><hr/><hr/><hr/><hr/>
+          <hr/><hr/><hr/><hr/><hr/><hr/><hr/><hr/><hr/><hr/><hr/><hr/><hr/>
+        </div>
+
+
+        <div class="mb-5 text-center">
+          <button class="btn btn-sm btn-outline-red">Click Me</button>
+          <button class="btn btn-sm btn-outline-orange">Click Me</button>
+          <button class="btn btn-sm btn-outline-yellow">Click Me</button>
+          <button class="btn btn-sm btn-outline-olive">Click Me</button>
+          <button class="btn btn-sm btn-outline-green">Click Me</button>
+          <button class="btn btn-sm btn-outline-teal">Click Me</button>
+          <button class="btn btn-sm btn-outline-light-cyan">Click Me</button>
+          <button class="btn btn-sm btn-outline-blue">Click Me</button>
+          <button class="btn btn-sm btn-outline-violet">Click Me</button>
+          <button class="btn btn-sm btn-outline-pink">Click Me</button>
+          <button class="btn btn-sm btn-outline-purple">Click Me</button>
+          <button class="btn btn-sm btn-outline-brown">Click Me</button>
+          <button class="btn btn-sm btn-outline-gray">Click Me</button>
+          <button class="btn btn-sm btn-outline-dark">Click Me</button>
+          <button class="btn btn-sm btn-outline-light">Click Me</button>
+        </div>
+        
+        
+      </article>
+
+
+      <!-- ===========================================================================
+      
+      ============================================================================ -->
+      
+      
+      <article class='article'>
+        <h2 class='text-white-3d'>Tables:</h2>
+
+        <p>Currently, there are only the following variants:</p>
+
+        <pre><code>
+    $table-variants: (
+      "light":      $light,
+      "dark":       $dark,
+      "blue":    shift-color($blue, $table-bg-scale),
+      "gray":    shift-color($gray, $table-bg-scale),
+      "green":   shift-color($green, $table-bg-scale),
+      "teal":    shift-color($teal, $table-bg-scale), //Instead of $info / $cyan
+      "yellow":  shift-color($yellow, $table-bg-scale),
+      "red":     shift-color($red, $table-bg-scale)
+    );
+        </code></pre>
+
+
+        <p>In an effort to reduce the file size, I did not want to include every possible color.
+        Just change <code>table-*</code> to see the different colors.</p>
+
+
+        <table class="w-90 mx-auto table table-blue table-bordered"><!-- Change this as needed.-->
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">First</th>
+              <th scope="col">Last</th>
+              <th scope="col">Handle</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td colspan="2">Larry the Bird</td>
+              <td>@twitter</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+
+
+      <!-- ===========================================================================
+      
+      ============================================================================ -->
+      
+      
+      <article class='article'>
+        <h2 class='text-white-3d'>Next Steps:</h2>
+
+
+        <p>I have not tested forms at all. Definitely do this!</p>
+      
+      
+        <p>_close.scss could have more variations.</p>
+
+
+        <p>Add a few more ratios.</p>
+      
+      
+        <p>Could add a <code>.table-fixed</code> class to tables.</p>
+
+
+        <p>Possibly add in a media query for Offcanvas that makes it <code>width:100%</code> for smaller screens.</p>
+
+
+        <p>Possibly extend the <code>.fade</code> duration. It's not very smooth by default.</p>
+      </article>
+    </div><!-- <div class="container"> -->
+  </main>
+
+
+  <!--  ========================================================================
+
+  ========================================================================== -->
+
+
+
+  <!-- <script src="script.js"></script> -->
+</body>
+</html>
